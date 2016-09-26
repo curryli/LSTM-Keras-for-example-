@@ -1,0 +1,169 @@
+select ar_pri_acct_no, count(*) as count
+from tbl_arsvc_fraud_trans
+group by ar_pri_acct_no
+order by count desc
+limit 2;
+
+1f7591898d563a540c7335677b0f42b1        998
+d67fe5ed21b2e957dd602b352af4b40c        944
+
+
+
+
+select count(*) as count
+from tbl_arsvc_fraud_trans
+group by ar_pri_acct_no
+order by count desc
+limit 10;
+
+
+
+998
+944
+908
+895
+806
+725
+629
+611
+595
+583
+574
+569
+547
+525
+512
+507
+495
+443
+428
+422
+412
+410
+404
+395
+395
+387
+378
+365
+365
+364
+348
+346
+339
+333
+332
+331
+331
+328
+328
+324
+320
+313
+313
+313
+311
+307
+305
+305
+305
+300
+296
+295
+293
+290
+290
+286
+285
+285
+279
+278
+278
+276
+275
+273
+270
+268
+264
+264
+259
+257
+254
+250
+248
+247
+245
+245
+239
+238
+236
+235
+235
+235
+234
+231
+230
+227
+225
+224
+222
+221
+221
+219
+215
+215
+214
+213
+211
+209
+208
+207
+
+
+
+
+select max(rmb_pay_at),  min(rmb_pay_at) from tbl_arsvc_fraud_trans;
+
+
+
+select count(*) from tbl_common_his_trans
+where pri_acct_no_conv = "1f7591898d563a540c7335677b0f42b1"
+
+select trans_dt from tbl_arsvc_fraud_trans limit 5;
+20100407
+20100327
+20100408
+20100326
+
+
+select trans_dt from tbl_arsvc_fraud_trans where substr(trans_dt,1,4)<>"9999" order by trans_dt desc limit 4;
+ 
+20160806
+20160806
+20160806
+20160806
+ 
+ 
+ 
+select ar_pri_acct_no, count(*) as count
+from tbl_arsvc_fraud_trans
+where trans_dt>='20150101' and trans_dt<='20151230'
+group by ar_pri_acct_no
+order by count desc
+limit 100;
+
+81d933f4ac7792dd1c96c456b9a65968        908
+be2f69b5638b16c4496837909265a690        806
+8366959f78430a932d0bc48743e0ffe0        725
+bacd9f3606e0bd8b4c7a9a0894121383        583
+cdcd3d4df0b53bf1d6b8abb59fdc20e8        525
+d01f098d0c380d1bc07196238b8e281c        512
+8e7333b0cb1f6bf27e6d41288fed73bd        507
+
+
+
+select count(*) from tbl_common_his_trans
+where pri_acct_no_conv = "81d933f4ac7792dd1c96c456b9a65968" 
+and pdate>='20150101' and pdate<='20151230';
+
+	

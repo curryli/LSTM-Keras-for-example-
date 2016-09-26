@@ -1,0 +1,4 @@
+http://blog.csdn.net/niuwei22007/article/details/49406355
+http://www.360doc.com/content/16/0714/09/1317564_575385061.shtml
+
+https://keras.io/preprocessing/sequence/#pad_sequences
